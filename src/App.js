@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Header"
 import Home from "./Home"
+import Checkout from "./Checkout"
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,7 @@ function App() {
             </Route>
             <Route path="/checkout">
               <Header/>
+              <Checkout/>
             </Route>
             <Route path="/">
               <Header/>

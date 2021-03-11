@@ -1,0 +1,20 @@
+.checkout{
+  text-align:left;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+.checkout__banner{
+  font-size:13px;
+}
+
+.checkout__title{
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: white;
+  padding:15px;
+  border-bottom:1px solid lightgray;
+}
+.checkout__amazonpay{
+  color:#b03a3a;
+}
