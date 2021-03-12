@@ -8,10 +8,14 @@
   width:100%;
   max-height:400px;
   min-width:100px;
-  background-color: white;
+  background-color:#ffffff;
   z-index: 1;
+  border-radius:15px;
 }
 
+.product:hover{
+  transform: scale(1.02);
+}
 .product__info{
   text-align: left;
   height:100px;
@@ -46,8 +50,7 @@
   background-color: #f0c14b;
   outline:none;
   border:none;
-  /* border:1px solid; */
   cursor: pointer;
-  padding:10px;
+  padding:10px 40px;
   border-radius:20px;
 }

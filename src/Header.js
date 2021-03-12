@@ -4,10 +4,16 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import {Link} from "react-router-dom"
 import {useStateValue} from "./StateProvider.js"
-
+import {auth} from "./firebase"
 function Header() {
-  const[{basket}] = useStateValue();
+  const[{user,basket}] = useStateValue();
 
+  const login = () =>
+  {
+    if(user){
+      auth.signOut();
+    }
+  }
   return (
     <nav className="header">
       <Link to="/">
@@ -19,19 +25,19 @@ function Header() {
       </div>
 
       <div className ="header__linksContainer">
-        <Link className ="header__link" to="/login">
-              <span className="header__linkFirstLine">Hello Kush</span>
-              <span className="header__linkSecondLine">Sign in</span>
+        <Link className ="header__link" to={!user && "/login"}>
+              <span className="header__linkFirstLine">Hello {user?.email}</span>
+              <span className="header__linkSecondLine" onClick={login}>{user?"Sign out":"Sign in"}</span>
         </Link>
         <Link className ="header__link" to="/checkout">
               <span className="header__linkFirstLine">Returns</span>
               <span className="header__linkSecondLine">& Orders</span>
         </Link>
-        <Link className ="header__link" to="/">
+        <a href="https://www.primevideo.com/region/eu/ref=dv_web_force_root" className="header__link">
             <span className="header__linkFirstLine">Your</span>
             <span className="header__linkSecondLine">Prime</span>
-        </Link>
-        <Link className ="header__link header__basket">
+        </a>
+        <Link className ="header__link header__basket" to="/checkout">
             <ShoppingBasketIcon className="header__basketIcon"/>
             <span className="header__linkSecondLine header__basketCounter">{basket?.length}</span>
         </Link>

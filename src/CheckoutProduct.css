@@ -1,11 +1,12 @@
 .checkoutProduct{
-  margin-top:20px;
-  margin-bottom:20px;
   display:flex;
+  background-color: white;
+  padding:15px;
+  border-bottom:1px solid lightgray;
+
 }
 
 .checkoutProduct__image{
-  background-color: transparent;
   object-fit: contain;
   height:180px;
   width:180px;

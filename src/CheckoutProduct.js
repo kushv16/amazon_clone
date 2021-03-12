@@ -2,6 +2,8 @@ import React from 'react'
 import StarIcon from '@material-ui/icons/Star';
 import "./CheckoutProduct.css"
 import {useStateValue} from "./StateProvider"
+
+
 function CheckoutProduct({id,title,price,rating,image}) {
 
   const[{basket},dispatch] = useStateValue();
@@ -15,6 +17,7 @@ function CheckoutProduct({id,title,price,rating,image}) {
 
   return (
     <div className="checkoutProduct">
+
         <img className="checkoutProduct__image" src={image}/>
         <div className="checkoutProduct__info">
           <div className="checkoutProduct__title">
@@ -34,9 +37,9 @@ function CheckoutProduct({id,title,price,rating,image}) {
             }
           </div>
           <button className="checkoutProduct__button" onClick={removeFromBasket}>Remove from Basket</button>
+        </div>
       </div>
-    </div>
-  )
+        )
 }
 
 export default CheckoutProduct
